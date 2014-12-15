@@ -1,0 +1,19 @@
+<h2>Create an Account</h2>
+<form action="/user/create" method="POST">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" name="email">
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" name="firstName">
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" name="lastName">
+    <label for="dateOfBirth">Date of Birth</label>
+    <input type="text" class="form-control datepicker" name="dateOfBirth">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" name="password">
+    <label for="passwordConfirm">Confirm Password</label>
+    <input type="password" class="form-control" name="passwordConfirm">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+  <input type="hidden" name="_csrf" value="<%= _csrf %>">
+</form>

@@ -1,0 +1,57 @@
+<div class="view-recommendation">
+  <% if (!recommendation) { %>
+    <div class="errors">
+      <p>Recommendation not found.</p>
+    </div>
+  <% } else { %>
+    <h2><%= recommendation.albumInfo.artist %>: <%= recommendation.albumInfo.name %> in <a href="/group/view/<%- recommendation.group.id %>"><%= recommendation.group.name %></a></h2>
+    <p><i class="fa fa-thumbs-o-up left"></i>Recommended by <a href="/user/profile/<%- recommendation.user.id %>"><%= recommendation.user.firstName %> <%= recommendation.user.lastName %></a></p>
+    <div class="recommendation">
+      <img src="<%= recommendation.albumInfo.thumbnailUrl %>" alt="<%= recommendation.albumInfo.name %>">
+      <div class="rating">
+        <p>Average Rating</p>
+        <% _.times(averageRating, function() { %>
+        <i class="fa fa-star"></i>
+        <% }); %>
+        <% _.times(5 - averageRating, function() { %>
+        <i class="fa fa-star-o"></i>
+        <% }); %>
+        
+        <% if (userInGroup) { %>
+        <% if (userRating != null) { %>
+        <p>Your Rating</p>
+        <% _.times(userRating, function() { %>
+        <i class="fa fa-star"></i>
+        <% }); %>
+        <% _.times(5 - userRating, function() { %>
+        <i class="fa fa-star-o"></i>
+        <% }); %>
+        <% } else { %>
+        <a href="/recommendation/rate/<%- recommendation.id %>" class="btn btn-default">Rate this album</a>
+        <% } %>
+        <% } %>
+      </div>
+      <h3><%= recommendation.albumInfo.name %></h3>
+      <p class="artist"><%= recommendation.albumInfo.artist %></p>
+    </div>
+
+    <h3>Comments</h3>
+    <% if (recommendation.comments.length > 0) { %>
+    <div class="comments">
+      <ul>
+        <% _.each(recommendation.comments, function(comment) { %>
+          <li>
+            <p><%= comment.content %></p>
+            <p class="author"><i class="fa fa-user left"></i><a href="/user/profile/<%- comment.author.id %>"><%= comment.author.firstName %> <%= comment.author.lastName %></a></p>
+          </li>
+        <% }); %>
+      </ul>
+      <% } else { %>
+      <p>This recommendation currently has no comments</p>
+      <% } %>
+      <% if (userInGroup) { %>
+      <a href="/recommendation/comment/<%- recommendation.id %>" class="btn btn-default"><i class="fa fa-comment-o left"></i>Comment</a>
+      <% } %>
+    </div>
+  <% } %>
+</div>

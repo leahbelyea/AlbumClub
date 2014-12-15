@@ -1,0 +1,45 @@
+{
+  "data": {
+    "user": [
+      {
+        "email": "leahbelyea@gmail.com",
+        "firstName": "Leah",
+        "lastName": "Belyea",
+        "id": 1,
+        "createdAt": "2014-11-27T00:25:26.291Z",
+        "updatedAt": "2014-11-27T00:25:26.291Z"
+      }
+    ]
+  },
+  "schema": {
+    "user": {
+      "email": {
+        "type": "string",
+        "unique": true
+      },
+      "firstName": {
+        "type": "string"
+      },
+      "lastName": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "user": {
+      "id": 1
+    }
+  }
+}

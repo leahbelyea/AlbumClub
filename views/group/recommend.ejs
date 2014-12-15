@@ -1,0 +1,28 @@
+<form action="/group/recommend/<%- group.id %>" method="POST">
+  <input type="text" class="form-control"  placeholder="Please enter a search for the album you wish to recommend" name="searchTerm" value="<% if (searchPerformed) { %><%- searchTerm %><% } %>">
+  <button type="submit" class="btn btn-default">Search</button>
+  <input type="hidden" name="_csrf" value="<%= _csrf %>">
+</form>
+
+<% if (searchPerformed) { %>
+<h2>Search Results</h2>
+<% if (results.length > 0) { %>
+<ul class="album-list">
+  <% _.each(results, function(result) { %>
+  <li>
+    <img src="<%= result.artworkUrl100 %>" alt="<%= result.collectionName %>">
+    <form action="/recommendation/create" method="POST">
+      <input type="hidden" name="group" value="<%- group.id %>">
+      <input type="hidden" name="albumItunesId" value="<%= result.collectionId %>">
+      <button type="submit" class="btn btn-default">Recommend</button>
+      <input type="hidden" name="_csrf" value="<%= _csrf %>">
+    </form>
+    <h3><%= result.collectionName %></h3>
+    <p><%= result.artistName %></p>
+  </li>
+  <% }); %>
+</ul>
+<% } else { %>
+<p>No search results were found.</p>
+<% } %>
+<% } %>

@@ -1,0 +1,13 @@
+<% if (!recommendation) { %>
+  <p>Recommendation not found.</p>
+<% } else { %>
+  <h2>Comment on <%= recommendation.albumInfo.artist %>: <%= recommendation.albumInfo.name %></h2>
+  <form action="/comment/create" method="POST">
+    <input type="hidden" name="recommendation" value="<%- recommendation.id %>">
+    <div class="form-group">
+      <textarea name="content" cols="30" rows="5" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default"><i class="fa fa-comment-o left"></i>Comment</button>
+    <input type="hidden" name="_csrf" value="<%= _csrf %>">
+  </form>
+<% } %>

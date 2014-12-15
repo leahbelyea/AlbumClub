@@ -1,0 +1,15 @@
+<div class="user-list">
+  <% if (users.length == 0) { %>
+    <div class="errors">
+      <p>No users exist.</p>
+    </div>
+  <% } else { %>
+    <ul class="users">
+      <% _.each(users, function(user) { %>
+      <li>
+        <a href="/user/profile/<%= user.id %>"><%= user.firstName %> <%= user.lastName %></a>
+      </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</div>

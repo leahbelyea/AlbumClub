@@ -1,0 +1,330 @@
+div.register, div.login {
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 10px;
+}
+
+.container {
+  padding: 20px;
+  margin-bottom: 90px;
+}
+
+div.errors {
+  background-color: #f9f2f4;
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  border-left-color: #d9534f;
+}
+
+div.errors ul {
+  padding: 0;
+  margin: 0;
+}
+
+div.errors li {
+  list-style: none;
+}
+
+div.errors p {
+  margin: 0;
+}
+
+input.form-control, textarea.form-control {
+  margin-bottom: 1em;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+header h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+header a:hover, header a:active, header a:focus {
+  color: white;
+  text-decoration: none;
+}
+
+header div.user-info {
+  float: right;
+  text-align: right;
+}
+
+nav .navbar-collapse, nav .container-fluid {
+  padding-left: 0;
+}
+
+.container h2 {
+  margin-top: 0;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer li {
+  display: inline-block;
+  padding: 0 10px;
+  border-right: 1px solid #f0f0f0;
+  font-size: 14px
+}
+
+footer li:last-child {
+  border: none;
+}
+
+footer ul {
+  padding: 0;
+  float: right;
+  font-size: 0;
+}
+
+h2 a:hover {
+  text-decoration: none;
+}
+
+.button-bar {
+  margin-top: 40px;
+}
+
+.btn.edit-user {
+  float: right;
+}
+
+.btn.logout {
+  margin-bottom: 10px;
+}
+
+button.btn {
+  margin-bottom: 10px;
+}
+
+i.left {
+  padding-right: 5px;
+}
+
+ul.album-list {
+  padding: 0;
+}
+
+ul.album-list li {
+  list-style: none;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: #f0f0f0;
+  padding: 10px;
+}
+
+ul.album-list a li:hover {
+  background: #e0e0e0;
+}
+
+ul.album-list a:hover, ul.album-list a:focus, ul.album-list a:active {
+  text-decoration: none;
+}
+
+ul.album-list li img {
+  float: left;
+}
+
+ul.album-list li p, ul.album-list li h3, ul.album-list li h4 {
+  margin-left: 120px;
+  margin-right: 140px;
+}
+
+ul.album-list li h3, ul.album-list li h3 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+ul.album-list form {
+  float: right;
+}
+
+.profile ul.groups {
+  padding: 0;
+  display: inline-block;
+}
+
+.profile ul.groups li {
+  list-style: none;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.profile ul.groups li a {
+  background: #f0f0f0;
+  padding: 5px 25px;
+  display: block;
+}
+
+.profile ul.groups li a:hover, .profile ul.groups li a:focus, .profile ul.groups li a:active {
+  background: #e0e0e0;
+  text-decoration: none;
+}
+
+.group-list ul {
+  padding: 0;
+}
+
+.group-list ul li {
+  list-style: none;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: #f0f0f0;
+  padding: 15px;
+}
+
+.group-list ul a li:hover {
+  background: #e0e0e0;
+}
+
+.group-list ul a:hover, .group-list ul a:focus, .group-list ul a:active {
+  text-decoration: none;
+}
+
+.group-list ul li h2 {
+  margin-right: 140px;
+}
+
+.group-list ul li h3 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.group-list ul form {
+  float: right;
+}
+
+.view-group ul.members {
+  padding: 0;
+  display: inline-block;
+}
+
+.view-group ul.members li {
+  list-style: none;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.view-group ul.members li a {
+  background: #f0f0f0;
+  padding: 5px 25px;
+  display: block;
+}
+
+.view-group ul.members li a:hover, .view-group ul.members li a:focus, .view-group ul.members li a:active {
+  background: #e0e0e0;
+  text-decoration: none;
+}
+
+.view-group p.description {
+  margin-top: 20px;
+}
+
+form.button-only {
+  display: inline-block;
+}
+
+form.button-only button {
+  margin: 0;
+}
+
+.view-recommendation .recommendation {
+  background: #f0f0f0;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.view-recommendation .recommendation img {
+  float: left;
+}
+
+.view-recommendation .recommendation h3, .view-recommendation .recommendation p.artist {
+  margin-left: 120px;
+}
+
+.view-recommendation .comments {
+  background: #f0f0f0;
+  padding: 20px;
+}
+
+.view-recommendation .comments ul {
+  padding: 0;
+}
+
+.view-recommendation .comments ul li {
+  padding: 10px;
+  background: #fff;
+  list-style: none;
+  margin: 0 0 20px 0;
+}
+
+.view-recommendation .comments ul li p.author {
+  margin-top: -10px;
+}
+
+.view-recommendation .comments ul li i {
+  color: #428bca;
+}
+
+.user-list ul.users {
+  padding: 0;
+}
+
+.user-list ul.users li {
+  list-style: none;
+  font-size: 18px;
+}
+
+.user-list ul.users li a {
+  background: rgb(240, 240, 240);
+  padding: 10px;
+  margin: 5px 0px;
+  display: block;
+}
+
+.view-recommendation .recommendation .rating {
+  float: right;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.view-recommendation .recommendation .rating i {
+  padding: 2px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.view-recommendation .recommendation .rating a {
+  display: block;
+  margin-top: 10px;
+}
+
+.view-recommendation .recommendation .rating p {
+  margin: 0 0 5px;
+}
+
+.rate button {
+  display: block;
+}
+
+.rate div.rating i {
+  margin-bottom: 15px;
+  font-size: 30px;
+  padding: 5px;
+  cursor: pointer;
+}

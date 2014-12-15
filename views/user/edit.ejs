@@ -1,0 +1,27 @@
+<% if (!user) { %>
+  <div class="errors">
+    <p>User not found.</p>
+  </div>
+<% } else { %>
+<h2>Edit Your Account</h2>
+<form action="/user/update/<%- user.id %>" method="POST">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" name="email" value="<%= user.email %>" disabled="disabled">
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" name="firstName" value="<%= user.firstName %>">
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" name="lastName" value="<%= user.lastName %>">
+    <label for="dateOfBirth">Date of Birth</label>
+    <input type="text" class="form-control datepicker" name="dateOfBirth" value="<%= user.getDobString() %>">
+    <label for="bio">Bio</label>
+    <textarea name="bio" cols="30" rows="10" class="form-control"><%= user.bio || '' %></textarea>
+    <label for="password">Change Password</label>
+    <input type="password" class="form-control" name="password">
+    <label for="passwordConfirm">Confirm New Password</label>
+    <input type="password" class="form-control" name="passwordConfirm">
+  </div>
+  <button type="submit" class="btn btn-default">Save</button>
+  <input type="hidden" name="_csrf" value="<%= _csrf %>">
+</form>
+<% } %>

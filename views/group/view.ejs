@@ -1,0 +1,58 @@
+<div class="view-group">
+  <% if (!group) { %>
+    <div class="errors">
+      <p>Group not found.</p>
+    </div>
+  <% } else { %>
+    <h2><%= group.name %></h2>
+    <p><i class="fa fa-user left"></i>Administered by <a href="/user/profile/<%- group.admin.id %>"><%= group.admin.firstName %> <%= group.admin.lastName %></a></p>
+    <p class="description"><%= group.description %></p>
+
+    <h3>Members:</h3>
+    <% if (group.members.length > 0) { %>
+    <ul class="members">
+      <% _.each(group.members, function(member) { %>
+        <li><a href="/user/profile/<%- member.id %>"><%= member.firstName %> <%= member.lastName %></a></li>
+      <% }); %>
+    </ul>
+    <% } else { %>
+    <p>This group currently has no members</p>
+    <% } %>
+
+    <h3>Recommendations:</h3>
+    <% if (group.recommendations.length > 0) { %>
+    <ul class="album-list">
+      <% _.each(group.recommendations, function(recommendation) { %>
+        <a href="/recommendation/view/<%- recommendation.id %>">
+          <li>
+            <img src="<%= recommendation.albumInfo.thumbnailUrl %>" alt="<%= recommendation.albumInfo.name %>">
+            <h4><%= recommendation.albumInfo.name %></h4>
+            <p><%= recommendation.albumInfo.artist %></p>
+          </li>
+        </a>
+      <% }); %>
+    </ul>
+    <% } else { %>
+    <p>This group currently has no recommendations</p>
+    <% } %>
+    
+    <div class="button-bar">
+      <% if (group.hasMember(session.user.id)) { %>
+      <form action="/group/leave/<%- group.id %>" method="POST" class="button-only">
+        <button type="submit" class="btn btn-default">Leave Group</button>
+        <input type="hidden" name="_csrf" value="<%= _csrf %>">
+      </form>
+      <a href="/group/recommend/<%- group.id %>" class="btn btn-default">Recommend Album</a>
+      <% } else { %>
+      <form action="/group/join/<%- group.id %>" method="POST" class="button-only">
+        <button type="submit" class="btn btn-default">Join Group</button>
+        <input type="hidden" name="_csrf" value="<%= _csrf %>">
+      </form>
+      <% } %>
+
+      <% if (session.user.id == group.admin.id) { %>
+      <a href="/group/edit/<%- group.id %>" class="btn btn-default"><i class="fa fa-pencil left"></i>Edit Group</a>
+      <% } %>
+    </div>
+  <% } %>
+</div>

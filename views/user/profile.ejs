@@ -1,0 +1,44 @@
+<div class="profile">
+  <% if (!user) { %>
+    <div class="errors">
+      <p>User not found.</p>
+    </div>
+  <% } else { %>
+    <% if (session.user.id == user.id) { %>
+    <a href="/user/edit/<%- user.id %>" class="btn btn-default edit-user"><i class="fa fa-pencil left"></i>Edit Profile</a>
+    <% } %>
+    <h2><%= user.firstName %> <%= user.lastName %></h2>
+    <p><i class="fa fa-envelope-o left"></i><a href="mailto:<%= user.email %>"><%= user.email %></a></p>
+    <p><i class="fa fa-birthday-cake left"></i><%= user.getDobString() %></p>
+    <% if (user.bio) { %>
+    <h3>Bio</h3>
+    <p><%= user.bio %></p>
+    <% } %>
+
+    <% if (user.groups.length > 0) { %>
+    <h3>Groups</h3>
+    <ul class="groups">
+      <% _.each(user.groups, function(group) { %>
+        <li><a href="/group/view/<%- group.id %>"><%= group.name %></a></li>
+      <% }); %>
+    </ul>
+    <% } %>
+
+    <% if (user.recommendations.length > 0) { %>
+    <h3>Music Journal</h3>
+    <p>Albums <%= user.firstName %> has recommended</p>
+    <ul class="album-list">
+      <% _.each(user.recommendations, function(recommendation) { %>
+        <a href="/recommendation/view/<%- recommendation.id %>">
+          <li>
+            <img src="<%= recommendation.albumInfo.thumbnailUrl %>" alt="<%= recommendation.albumInfo.name %>">
+            <h4><%= recommendation.albumInfo.name %></h4>
+            <p><%= recommendation.albumInfo.artist %></p>
+          </li>
+        </a>
+      <% }); %>
+    </ul>
+    <% } %>
+
+  <% } %>
+</div>

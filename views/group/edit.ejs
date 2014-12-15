@@ -1,0 +1,11 @@
+<h2>Edit Group</h2>
+<form action="/group/update/<%- group.id %>" method="POST">
+  <div class="form-group">
+    <label for="name">Group Name</label>
+    <input type="text" class="form-control" name="name" value="<%= group.name %>">
+    <label for="bio">Group Description</label>
+    <textarea name="description" cols="30" rows="10" class="form-control"><%= group.description %></textarea>
+  </div>
+  <button type="submit" class="btn btn-default">Save</button>
+  <input type="hidden" name="_csrf" value="<%= _csrf %>">
+</form>

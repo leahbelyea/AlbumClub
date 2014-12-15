@@ -1,0 +1,95 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'connect-redis@1.4.5' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose readDependencies using package.json deps
+5 verbose cache add [ 'connect-redis@1.4.5', null ]
+6 verbose cache add name=undefined spec="connect-redis@1.4.5" args=["connect-redis@1.4.5",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'connect-redis@1.4.5',
+7 verbose parsed url   path: 'connect-redis@1.4.5',
+7 verbose parsed url   href: 'connect-redis@1.4.5' }
+8 verbose cache add name="connect-redis" spec="1.4.5" args=["connect-redis","1.4.5"]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: '1.4.5',
+9 verbose parsed url   path: '1.4.5',
+9 verbose parsed url   href: '1.4.5' }
+10 verbose addNamed [ 'connect-redis', '1.4.5' ]
+11 verbose addNamed [ '1.4.5', '1.4.5' ]
+12 silly lockFile 08b4a927-connect-redis-1-4-5 connect-redis@1.4.5
+13 verbose lock connect-redis@1.4.5 /Users/leahbelyea/.npm/08b4a927-connect-redis-1-4-5.lock
+14 verbose request where is /connect-redis
+15 verbose request registry https://registry.npmjs.org/
+16 verbose request id 68b05b9f03d7b6f7
+17 verbose url raw /connect-redis
+18 verbose url resolving [ 'https://registry.npmjs.org/', './connect-redis' ]
+19 verbose url resolved https://registry.npmjs.org/connect-redis
+20 verbose request where is https://registry.npmjs.org/connect-redis
+21 info trying registry request attempt 1 at 10:28:45
+22 http GET https://registry.npmjs.org/connect-redis
+23 http 200 https://registry.npmjs.org/connect-redis
+24 silly registry.get cb [ 200,
+24 silly registry.get   { date: 'Sat, 06 Dec 2014 14:28:49 GMT',
+24 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+24 silly registry.get     etag: '"DX3W8KHH3WWDI4D0XF958L8XK"',
+24 silly registry.get     'content-type': 'application/json',
+24 silly registry.get     'cache-control': 'max-age=60',
+24 silly registry.get     'content-length': '24196',
+24 silly registry.get     'accept-ranges': 'bytes',
+24 silly registry.get     via: '1.1 varnish',
+24 silly registry.get     age: '0',
+24 silly registry.get     'x-served-by': 'cache-ord1732-ORD',
+24 silly registry.get     'x-cache': 'HIT',
+24 silly registry.get     'x-cache-hits': '1',
+24 silly registry.get     'x-timer': 'S1417876129.275635,VS0,VE270',
+24 silly registry.get     vary: 'Accept',
+24 silly registry.get     'keep-alive': 'timeout=10, max=50',
+24 silly registry.get     connection: 'Keep-Alive' } ]
+25 silly lockFile e2aa4cba-ct-redis-connect-redis-1-4-5-tgz https://registry.npmjs.org/connect-redis/-/connect-redis-1.4.5.tgz
+26 verbose lock https://registry.npmjs.org/connect-redis/-/connect-redis-1.4.5.tgz /Users/leahbelyea/.npm/e2aa4cba-ct-redis-connect-redis-1-4-5-tgz.lock
+27 verbose addRemoteTarball [ 'https://registry.npmjs.org/connect-redis/-/connect-redis-1.4.5.tgz',
+27 verbose addRemoteTarball   'e0aa91072e7d1c99bb9a8b2911d84c6012c2aad3' ]
+28 info retry fetch attempt 1 at 10:28:49
+29 verbose fetch to= /var/folders/yh/swnftlr155dbf5260313dct00000gn/T/npm-6823-fEOVTPRi/registry.npmjs.org/connect-redis/-/connect-redis-1.4.5.tgz
+30 http GET https://registry.npmjs.org/connect-redis/-/connect-redis-1.4.5.tgz
+31 http 200 https://registry.npmjs.org/connect-redis/-/connect-redis-1.4.5.tgz
+32 silly lockFile e2aa4cba-ct-redis-connect-redis-1-4-5-tgz https://registry.npmjs.org/connect-redis/-/connect-redis-1.4.5.tgz
+33 silly lockFile e2aa4cba-ct-redis-connect-redis-1-4-5-tgz https://registry.npmjs.org/connect-redis/-/connect-redis-1.4.5.tgz
+34 silly lockFile 08b4a927-connect-redis-1-4-5 connect-redis@1.4.5
+35 silly lockFile 08b4a927-connect-redis-1-4-5 connect-redis@1.4.5
+36 error Error: EACCES, open '/Users/leahbelyea/.npm/connect-redis/1.4.5/package.tgz'
+36 error  { [Error: EACCES, open '/Users/leahbelyea/.npm/connect-redis/1.4.5/package.tgz']
+36 error   errno: 3,
+36 error   code: 'EACCES',
+36 error   path: '/Users/leahbelyea/.npm/connect-redis/1.4.5/package.tgz',
+36 error   parent: 'CS2043' }
+37 error Please try running this command again as root/Administrator.
+38 error System Darwin 13.1.0
+39 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "connect-redis@1.4.5"
+40 error cwd /Users/leahbelyea/Documents/CS2043
+41 error node -v v0.10.33
+42 error npm -v 1.4.28
+43 error path /Users/leahbelyea/.npm/connect-redis/1.4.5/package.tgz
+44 error code EACCES
+45 error errno 3
+46 error stack Error: EACCES, open '/Users/leahbelyea/.npm/connect-redis/1.4.5/package.tgz'
+47 verbose exit [ 3, true ]
