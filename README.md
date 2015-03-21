@@ -1,3 +1,3 @@
-# CS2043
+# AlbumClub
 
-a [Sails](http://sailsjs.org) application
+A simple web app that allows users to discover and share music. AlbumClub is like a book club for music; create groups, recommend albums, rate albums, and discuss.
